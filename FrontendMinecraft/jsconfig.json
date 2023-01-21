@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+      "target": "es5",
+      "lib": ["dom", "dom.iterable", "esnext"],
+      "allowJs": true,
+      "skipLibCheck": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "noEmit": true,
+      "esModuleInterop": true,
+      "module": "esnext",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "jsx": "preserve",
+      "incremental": true,
+      "baseUrl": ".",
+      "paths": {
+          "@/components/*": ["./src/components/*"],
+          "@/styles/*": ["src/styles/*"],
+          "@/constants/*": ["./src/constants/*"],
+          "@/public/*": ["./public/*"],
+          "@/assets/*": ["./src/assets/*"],
+          "@/request/*": ["./src/request/*"],
+          "@/partial/*": ["./src/partial/*"],
+      }
+    },
+    "include": ["next-env.d.ts", 
+      "**/*.{js,ts,jsx,tsx}",
+      "./src/*.{js,ts,jsx,tsx}",
+      "./src/**/*.{js,ts,jsx,tsx}",
+      "./src/**/**/*.{js,ts,jsx,tsx}",
+      "./src/**/**/**/*.{js,ts,jsx,tsx}",
+      "./src/**/**/**/**/*.{js,ts,jsx,tsx}",],
+    "exclude": ["node_modules", "build", "public", ".next"]
+}
