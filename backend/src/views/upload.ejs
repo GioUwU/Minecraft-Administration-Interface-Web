@@ -1,0 +1,22 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FILE UPLOAD DEMO</title>
+</head>
+
+<body>
+    <script>
+        const id = '<%= id %>'
+        console.log(id)
+    </script>
+    <form action="/api/updateAvatar" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <input type="submit" value="Upload" />
+    </form>
+
+</body>
+
+</html>
