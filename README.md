@@ -48,4 +48,4 @@ If you would like to contribute to this project, please fork the repository and 
 If you have any questions, please contact me at [gio.contactogg@gmail.com]
 
 # Video Tutorial
-[![Minecraft Administration Web Interface](https://www.youtube.com/watch?v=1SHsDD1IYXU)
+[![Minecraft Administration Web Interface](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)
