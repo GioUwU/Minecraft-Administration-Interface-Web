@@ -118,6 +118,11 @@ const RegisterBanContent = () => {
     setProofs([...proofs, ...files]);
   };
 
+  const handleDeleteProof = (proof) => {
+    const newProofs = proofs.filter((item) => item !== proof);
+    setProofs(newProofs);
+  };
+
   return (
     <div className="flex justify-center items-center h-auto pt-40 pb-40">
       <div className="w-[80%] max-w-xs md:max-w-md">
@@ -314,16 +319,39 @@ const RegisterBanContent = () => {
             <div className="flex flex-col items-center justify-center pt-10">
               {proofs &&
                 proofs.map((proof, index) => (
-                  <ul
+                  <div
                     key={index}
-                    className="flex flex-col items-center justify-center border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="flex flex-col items-center justify-center pt-10"
                   >
-                    <li className="flex flex-col items-left justify-left">
-                      <p className="text-xs text-gray-400 tracking-wider">
-                        {proof.name}
-                      </p>
-                    </li>
-                  </ul>
+                    <ul className="flex flex-col items-center justify-center border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                      <li className="flex flex-col items-left justify-left">
+                        <div className="flex flex-row items-left justify-left">
+                          <p className="text-xs text-gray-400 pt-1 tracking-wider">
+                            {proof.name}
+                          </p>
+                          <button
+                            className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-1 px-2  border border-red-500 hover:border-transparent rounded"
+                            type="button"
+                            onClick={() => handleDeleteProof(proof)}
+                          >
+                            <svg
+                              className="w-5 h-5"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                 ))}
             </div>
 
