@@ -18,7 +18,7 @@ const validateContent = ({ admin }) => {
 
   //eslint-disable-next-line
   const [banslist, setBanslist] = useState([]);
-  console.log(banslist);
+
   //eslint-disable-next-line
   useEffect(() => {
     const getBans = async () => {

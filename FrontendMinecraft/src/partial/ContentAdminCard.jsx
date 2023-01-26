@@ -11,7 +11,7 @@ const ContentAdminCard = ({ list }) => {
   const handleAutorizar = async (id) => {
     const response = await autorizarSancion(id);
     if (response.status === 200) {
-      router.reload();
+      router.push("/dashboard");
     } else {
       setError(true);
       setTextError(response.response.data.message);
@@ -24,7 +24,7 @@ const ContentAdminCard = ({ list }) => {
   const handleRechazar = async (id) => {
     const response = await rejectSancion(id);
     if (response.status === 200) {
-      router.reload();
+      router.push("/dashboard");
     } else {
       setError(true);
       setTextError(response.response.data.message);
