@@ -2,7 +2,7 @@
 [...]
 
 # Information
-This is a web interface for managing the bans, mutes, and kicks of a Minecraft server. It is written in PHP and uses MySQL for storage. It is designed to be used with the [Minecraft Server](https://minecraft.net/en-us/download/server/). includes system login, user registration, and user management. It also includes a system for managing the bans, mutes, and kicks of the Minecraft server.
+This is a web interface for managing the bans, mutes, and kicks of a Minecraft server. It is written in Js and uses MySQL for storage. It is designed to be used with the [Minecraft Server](https://minecraft.net/en-us/download/server/). includes system login, user registration, and user management. It also includes a system for managing the bans, mutes, and kicks of the Minecraft server.
 
 # Included Files
 * README.md - This file
@@ -48,4 +48,4 @@ If you would like to contribute to this project, please fork the repository and 
 If you have any questions, please contact me at [gio.contactogg@gmail.com]
 
 # Video Tutorial
-[![Minecraft Administration Web Interface](https://img.youtube.com/vi/1Z4gQ3wHqXs/0.jpg)](https://www.youtube.com/watch?v=1Z4gQ3wHqXs)
+[![Minecraft Administration Web Interface](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=1SHsDD1IYXU)
