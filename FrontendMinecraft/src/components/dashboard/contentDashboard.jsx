@@ -18,13 +18,28 @@ const contentDashboard = ({admin}) => {
 
   //eslint-disable-next-line
   const [banslist, setBanslist] = useState([]);
+
   //eslint-disable-next-line
   useEffect(() => {
     const getBans = async () => {
       const response = await getAllBans();
       if (response.status === 200) {
-        setLoading(false);
-        setBanslist(response.data);
+      
+        const banlistarray = [];
+        response.data.map((ban) => {
+           
+          if (ban.check === true) {
+            
+            banlistarray.push(ban);
+          }
+          return banlistarray;
+        });
+
+        setBanslist(banlistarray);
+
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
       }
     };
     getBans();
@@ -90,6 +105,8 @@ const contentDashboard = ({admin}) => {
             )}
           </div>
         )}
+
+        {currentGuilds.length === 0 && (
         <div className="flex flex-col justify-center items-center mt-[50px]">
           <div className="flex flex-row justify-center items-center">
             {/* los botones deben ser back y next, si llega a la ultima pagina no debe mostrar el boton next */}
@@ -110,7 +127,9 @@ const contentDashboard = ({admin}) => {
             </button>
           </div>
         </div>
+      )}
       </div>
+          
     </div>
   );
 };

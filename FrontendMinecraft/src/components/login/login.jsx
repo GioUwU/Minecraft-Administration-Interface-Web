@@ -14,7 +14,7 @@ const Login = () => {
   
 
     useEffect(() => {
-        if(user.email) {
+        if(user) {
             router.push("/dashboard");
         } else {
             router.push("/");

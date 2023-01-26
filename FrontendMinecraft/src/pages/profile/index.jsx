@@ -12,6 +12,14 @@ const registerBan = () => {
   //eslint-disable-next-line
   const router = useRouter();
   //eslint-disable-next-line
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      router.push("/");
+    }
+    if (!user) {
+      router.push("/");
+    }
+  }, []);
   
 
   const styles = {

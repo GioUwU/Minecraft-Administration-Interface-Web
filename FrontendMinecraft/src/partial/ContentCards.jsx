@@ -78,18 +78,7 @@ const ContentCards = ({list}) => {
                   </span>
                   {list.time}
                 </p>
-                <p className="text-gray-300 text-[12px] md:text-[16px]">
-                  <span className="font-bold text-[14px] md:text-[18px]">
-                    createdAt:{" "}
-                  </span>
-                  {list.createdAt}
-                </p>
-                <p className="text-gray-300 text-[12px] md:text-[16px]">
-                  <span className="font-bold text-[14px] md:text-[18px]">
-                    updatedAt:{" "}
-                  </span>
-                  {list.updatedAt}
-                </p>
+                
               </div>
               <div className="flex flex-col items-left w-full">
                 <button

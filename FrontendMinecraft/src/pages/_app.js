@@ -5,7 +5,7 @@ import UserContext from "@/components/context/userContext";
 import { getDataUser, logoutUser } from "@/request/auth";
 
 export default function App({ Component, pageProps }) {
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState(null);
   const [hide, setHide] = useState(false);
   const router = useRouter();
 

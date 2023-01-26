@@ -64,8 +64,9 @@ const Profile = () => {
           <div className="flex flex-col items-center justify-center">
             <Image
               className="w-32 h-32 rounded-full"
-              src={
+              src={ user ? ( 
                 user.avatar ? user.avatar : "https://i.imgur.com/6VBx3io.png"
+              ) : "https://i.imgur.com/6VBx3io.png"
               }
               width={200}
               height={200}
@@ -116,25 +117,25 @@ const Profile = () => {
                   <span className="font-bold text-[14px] md:text-[18px]">
                     id:{" "}
                   </span>
-                  {user.id}
+                  {user ? user.id : "no hay id"}
                 </p>
                 <p className="text-gray-300 text-[12px] md:text-[16px]">
                   <span className="font-bold text-[14px] md:text-[18px]">
                     nickname:{" "}
                   </span>
-                  {user.nickname}
+                  {user ? user.nickname : "no hay nickname"}
                 </p>
                 <p className="text-gray-300 text-[12px] md:text-[16px]">
                   <span className="font-bold text-[14px] md:text-[18px]">
                     email:{" "}
                   </span>
-                  {user.email}
+                  {user ? user.email : "no hay email"}
                 </p>
                 <p className="text-gray-300 text-[12px] md:text-[16px]">
                   <span className="font-bold text-[14px] md:text-[18px]">
                     role:{" "}
                   </span>
-                  {user.role}
+                  {user ? user.role : "no hay role"}
                 </p>
               </div>
             </div>
@@ -147,15 +148,19 @@ const Profile = () => {
                   <span className="font-bold text-[14px] md:text-[18px]">
                     wallet:{" "}
                   </span>
-                  {user.earnings} $
+                  {user ? user.earnings : "no hay wallet"}
                 </p>
                 <p className="text-gray-300 text-[12px] md:text-[16px]">
                   <span className="font-bold text-[14px] md:text-[18px]">
                     status:{" "}
                   </span>
+                  {user ? (
                   <span className={validateEarnings(user.earnings).color}>
                     {validateEarnings(user.earnings).text}
                   </span>
+                ) : (
+                  "no hay status"
+                )}
                 </p>
               </div>
               <button

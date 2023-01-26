@@ -27,7 +27,7 @@ const Navbar = () => {
     <nav className="w-full flex py-6 justify-between items-center navbar">
       <ul className="list-none sm:flex hidden justify-start items-center flex-1">
         <li className="font-poppins font-medium text-[16px] text-dimWhite mr-10 hover:text-white">
-          {user.email && <Link href="/dashboard">dashboard</Link>}
+          {user && <Link href="/dashboard">dashboard</Link>}
         </li>
         <li className="font-poppins font-medium text-[16px] text-dimWhite mr-10 hover:text-white">
           <Link href="/rules">Rules</Link>
@@ -35,15 +35,14 @@ const Navbar = () => {
         <li className="font-poppins font-medium text-[16px] text-dimWhite mr-10 hover:text-white">
           <Link href="/timebans">Times ban</Link>
         </li>
-        {user.email && (
+        {user && (
           <li className="font-poppins font-medium text-[16px] text-dimWhite mr-10 hover:text-white">
             <Link href="/registerban">Register ban</Link>
           </li>
         )}
 
-        {(user && user.role === "op") ||
-        user.role === "high" ||
-        user.role === "owner" ? (
+        { user && (user.role === "op" || user.role === "high" || user.role === "owner") ? (
+        
           <>
             <li className="font-poppins font-medium text-[16px] text-dimWhite mr-10 hover:text-white">
               <Link href="/accounts">Accounts</Link>
@@ -61,7 +60,7 @@ const Navbar = () => {
         ) : (
           <></>
         )}
-        {user.email && (
+        {user && (
           <li className="font-poppins font-medium text-[16px] text-dimWhite mr-10 hover:text-white">
             <Link href="/profile">Profile</Link>
           </li>
@@ -69,7 +68,7 @@ const Navbar = () => {
       </ul>
 
       <div className="flex justify-end items-center list-none sm:flex hidden justify-start items-center flex-1">
-        {user.email ? (
+        {user ? (
           <div className="flex justify-end items-start flex-1">
             <button className=""></button>
             <button
@@ -137,15 +136,13 @@ const Navbar = () => {
             <li className="font-poppins font-medium text-[16px] text-dimWhite mr-10 hover:text-white">
               <Link href="/timebans">Times ban</Link>
             </li>
-            {user.email && (
+            {user && (
               <li className="font-poppins font-medium text-[16px] text-dimWhite mr-10 hover:text-white">
                 <Link href="/registerban">Register ban</Link>
               </li>
             )}
 
-            {(user && user.role === "op") ||
-            user.role === "high" ||
-            user.role === "owner" ? (
+             { user && (user.role === "op" || user.role === "high" || user.role === "owner") ? (
               <>
                 <li className="font-poppins font-medium text-[16px] text-dimWhite mr-10 hover:text-white">
                   <Link href="/accounts">Accounts</Link>
@@ -163,7 +160,7 @@ const Navbar = () => {
             ) : (
               <></>
             )}
-            {user.email && (
+            {user && (
               <li className="font-poppins font-medium text-[16px] text-dimWhite mr-10 hover:text-white">
                 <Link href="/profile">Profile</Link>
               </li>
@@ -171,7 +168,7 @@ const Navbar = () => {
           </ul>
 
           <div className="flex justify-end items-start flex-1">
-            {user.email ? (
+            {user ? (
               <div className="flex justify-end items-start flex-1">
                 <button className=""></button>
                 <button
