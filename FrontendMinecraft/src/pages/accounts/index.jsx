@@ -13,10 +13,9 @@ const Dashboard = () => {
     if (!localStorage.getItem("token")) {
       router.push("/");
     }
-    if(user.role !== "op" && user.role !== "owner" && user.role !== "high"){
+    if (user.role !== "op" && user.role !== "owner" && user.role !== "high") {
       router.push("/dashboard");
     }
-   
   }, []);
 
   const styles = {

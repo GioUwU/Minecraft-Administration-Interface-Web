@@ -6,7 +6,7 @@ import Footer from "@/components/general/Footer";
 import { useRouter } from "next/router";
 
 const CreateAccount = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const router = useRouter();
 
   useEffect(() => {
@@ -17,7 +17,6 @@ const CreateAccount = () => {
       router.push("/dashboard");
     }
   }, []);
-
 
   const styles = {
     boxWidth: "xl:max-w-[1280px] w-full",

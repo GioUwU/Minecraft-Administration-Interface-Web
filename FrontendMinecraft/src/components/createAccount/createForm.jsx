@@ -22,9 +22,8 @@ const contentCreateAccount = () => {
     "Por favor ingrese sus credenciales"
   );
 
-
   const roleListByrole = () => {
-    if (user.role === "op") {
+    if (user?.role === "op") {
       const roleList = [
         { value: "op", label: "Operator" },
         { value: "Owner", label: "Owner" },
@@ -32,13 +31,13 @@ const contentCreateAccount = () => {
         { value: "minor", label: "Minor" },
       ];
       return roleList;
-    } else if (user.role === "owner") {
+    } else if (user?.role === "owner") {
       const roleList = [
         { value: "high", label: "High" },
         { value: "minor", label: "Minor" },
       ];
       return roleList;
-    } else if (user.role === "high") {
+    } else if (user?.role === "high") {
       const roleList = [{ value: "minor", label: "Minor" }];
       return roleList;
     } else {
@@ -151,6 +150,5 @@ const contentCreateAccount = () => {
     </div>
   );
 };
-
 
 export default contentCreateAccount;

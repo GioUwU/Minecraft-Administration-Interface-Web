@@ -9,14 +9,14 @@ const Dashboard = () => {
   const { user, setUser } = useContext(UserContext);
   const router = useRouter();
 
- useEffect(() => {
-   if (!localStorage.getItem("token")) {
-     router.push("/");
-   }
-   if (!user) {
-     router.push("/");
-   }
- }, []);
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      router.push("/");
+    }
+    if (!user) {
+      router.push("/");
+    }
+  }, []);
 
   const styles = {
     boxWidth: "xl:max-w-[1280px] w-full",
