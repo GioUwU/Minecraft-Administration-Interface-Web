@@ -11,7 +11,7 @@ const ContentAdminCard = ({ list }) => {
   const handleAutorizar = async (id) => {
     const response = await autorizarSancion(id);
     if (response.status === 200) {
-      router.push("/dashboard");
+      router.reload();
     } else {
       setError(true);
       setTextError(response.response.data.message);
@@ -24,7 +24,7 @@ const ContentAdminCard = ({ list }) => {
   const handleRechazar = async (id) => {
     const response = await rejectSancion(id);
     if (response.status === 200) {
-      router.push("/dashboard");
+      router.reload();
     } else {
       setError(true);
       setTextError(response.response.data.message);
@@ -81,12 +81,10 @@ const ContentAdminCard = ({ list }) => {
                   proofs:{" "}
                 </span>
                 {list.proofs.map((proof, index) => (
-                  <Link href={proof.url} key={index} >
-               
-                      <p className="text-gray-300 text-[12px] md:text-[16px]">
-                        {proof.url}
-                      </p>
-                    
+                  <Link href={proof.url} key={index}>
+                    <p className="text-gray-300 text-[12px] md:text-[16px]">
+                      {proof.url}
+                    </p>
                   </Link>
                 ))}
               </p>
@@ -142,10 +140,13 @@ const ContentAdminCard = ({ list }) => {
               </button>
 
               {error && (
-                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4 " role="alert">
+                <div
+                  className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4 "
+                  role="alert"
+                >
                   <strong className="font-bold">Error!</strong>
                   <span className="block sm:inline">{textError}</span>
-                  </div>
+                </div>
               )}
             </div>
           </div>
